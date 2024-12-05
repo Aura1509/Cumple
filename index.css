@@ -1,0 +1,156 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #954bf5, #4c0fad);
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balloon {
+    font-size: 50px;
+    cursor: pointer;
+    animation: float 3s infinite ease-in-out;
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Ocultar la invitación */
+.hidden {
+    display: none;
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+.stars {
+    position: fixed;
+    width: 100rem;
+    height: 100vh;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    background: rgb(249, 252, 255);
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out, move 10s linear infinite;
+}
+
+/* Parpadeo de las estrellas */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Movimiento suave */
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+
+.container {
+    z-index: 2;
+    text-align: center;
+    background: rgba(197, 188, 206, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.candle {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 60px;
+    background: #e0c096;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 233, 233, 0.8);
+    animation: flicker 2s infinite ease-in-out;
+}
+
+.candle::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 30%;
+    width: 10px;
+    height: 30px;
+    background: radial-gradient(circle, #fff, rgba(255, 165, 0, 0.6));
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: flicker 2s infinite ease-in-out;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+h1 {
+    color: #000000;
+}
+
+p {
+    color: #000000;
+    font-size: 30px;
+}
+p.mensajito{
+    font-size: 20px;
+}
+
+.invitation {
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px dashed #744304;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #fc4027;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #ec5e33;
+}
+
+#no-btn {
+    background-color: #6d6c6c;
+    cursor: pointer;
+    position: relative;
+}
+
+

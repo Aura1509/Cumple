@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Especial</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>¡Vamos a celebrar tu cumpleaños!</h1>
+        <div class="balloon" id="balloon">
+            🎈
+            <p>Explota el globito!</p>
+        </div>
+
+        <div id="content" class="hidden">
+            <p class="mensajito">Eres una persona increíblemente especial, y mientras yo esté a tu lado, quiero hacer de
+                cada uno de tus
+                cumpleaños los mejores. </p>
+            <div  id="invitation">
+                <h2>Invitación</h2>
+                <p class="mensajito"><strong>Fecha:</strong> 07 de diciembre de 2024</p>
+                <p class="mensajito"><strong>Hora:</strong> 7:00 PM</p>
+                <p class="mensajito"><strong>Lugar:</strong> Un lugar para comer!!</p>
+            </div>
+            <button id="no-btn">No quiero ir</button>
+            <button onclick="alert('¡Yupiiiii, va a ser un lindo diaaaaa con el amor de mi vidaaaaa❤️!')">Vamossss!!</button>
+
+            <div class="candle" style="left: 20%;"></div>
+            <div class="candle" style="left: 30%;"></div>
+            <div class="candle" style="left: 40%;"></div>
+            <div class="candle" style="left: 50%;"></div>
+            <div class="candle" style="left: 60%;"></div>
+            <div class="candle" style="left: 70%;"></div>
+            <div class="candle" style="left: 80%;"></div>
+
+        </div>
+    </div>
+
+    <script>
+        const balloon = document.getElementById('balloon');
+        const content = document.getElementById('content');
+
+        balloon.addEventListener('click', () => {
+            balloon.textContent = '💥'; // Cambia el globito por una explosión
+            setTimeout(() => {
+                balloon.style.display = 'none'; // Desaparece el globito
+                content.classList.remove('hidden'); // Muestra el contenido oculto
+            }, 500); // Agrega un pequeño retraso para simular la explosión
+        });
+
+        const noBtn = document.getElementById('no-btn');
+
+        noBtn.addEventListener('mouseover', () => {
+            const randomX = Math.random() * 300 - 150;
+            const randomY = Math.random() * 100 - 50;
+            noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        });
+
+
+        const starContainer = document.createElement('div');
+starContainer.className = 'stars';
+document.body.appendChild(starContainer);
+
+function createStar() {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const size = Math.random() * 10 + 5; // Tamaño aleatorio
+    const xPos = Math.random() * window.innerWidth; // Posición aleatoria
+    const duration = Math.random() * 5 + 5; // Duración del movimiento aleatoria
+
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.left = `${xPos}px`;
+    star.style.animationDuration = `${duration}s, ${duration + 5}s`; // Sincroniza el movimiento y parpadeo
+
+    starContainer.appendChild(star);
+
+    // Elimina la estrella después de que salga de la pantalla
+    setTimeout(() => {
+        star.remove();
+    }, duration * 1000);
+}
+
+// Genera estrellas continuamente
+setInterval(createStar, 200);
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
